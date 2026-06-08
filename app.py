@@ -4,6 +4,79 @@ import pickle
 import pandas as pd
 import requests # it hits the api and get poster id
 
+st.set_page_config(
+    page_title="🎬 Movie Recommender",
+    page_icon="🎥",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
+st.markdown("""
+<style>
+
+/* Main container */
+.block-container {
+    max-width: 1000px;
+    padding-top: 2rem;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 3rem !important;
+    color: white;
+    margin-bottom: 0;
+}
+
+/* Subtitle */
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 40px;
+}
+
+/* Dropdown box */
+div[data-baseweb="select"] > div {
+    min-height: 48px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+/* Dropdown selected text */
+div[data-baseweb="select"] span {
+    font-size: 16px;
+}
+
+/* Select Movie heading */
+.select-heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* Recommend button */
+.stButton > button {
+    width: 180px;
+    height: 48px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color:white;
+}
+
+/* Movie names */
+.movie-title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+    min-height: 45px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 
 API_KEY = "8265bd1679663a7ea12ac168da84d2e8"
 
@@ -49,16 +122,27 @@ movies_dict = pickle.load(open('movies_dict.pkl','rb'))
 movies = pd.DataFrame(movies_dict)
 similarity=pickle.load(open('similarity.pkl','rb'))
 
-st.title('Movie Recommender System')
+st.markdown("""
+<h1>🎬 Movie Recommender System</h1>
+<p style='text-align:center;font-size:20px;'>
+Discover movies similar to your favorites
+</p>
+""", unsafe_allow_html=True)
 
 # Movie selection box
+st.markdown(
+    "<div class='select-heading'>🎬 Select a Movie</div>",
+    unsafe_allow_html=True
+)
+
 selected_movies_name = st.selectbox(
-    "Select a movie",
-    movies['title'].values
+    "",
+    movies['title'].values,
+    label_visibility="collapsed"
 )
 
 # Display selected movie
-st.write(f"You selected: {selected_movies_name}")
+st.info(f"Selected Movie: {selected_movies_name}")
 
 #make a bottom to show recommend and on clicking best 5 movies will be recommended to user
 if st.button("Recommend"):

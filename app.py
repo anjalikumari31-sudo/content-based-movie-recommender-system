@@ -1,7 +1,7 @@
 #using streamlit , we can use flask
 import streamlit as st
 import pickle
-import panda
+import pandas as pd
 import requests # it hits the api and get poster id
 
 

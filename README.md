@@ -75,4 +75,3 @@ streamlit run app.py
 
 ## Acknowledgement
 This project was developed by following and learning from the CampusX Movie Recommender System tutorial. I implemented the code, customized the UI, deployed the application using Streamlit Community Cloud, and made modifications to improve the user experience.
-Special thanks to CampusX for the educational content.

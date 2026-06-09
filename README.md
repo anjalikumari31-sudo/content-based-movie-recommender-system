@@ -43,9 +43,7 @@ Dataset contains:
 7. Streamlit Web App Deployment
 
 
-## Screenshots
-
-## 📸 Screenshots
+## Screenshots📸
 
 ### Home Page
 <img src="images/home_page.png" width="900">

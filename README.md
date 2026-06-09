@@ -46,10 +46,10 @@ Dataset contains:
 ## Screenshots📸
 
 ### Home Page
-<img src="images/home_page.png" width="900">
+<img src="images/home page.png" width="900">
 
 ### Recommendation Results
-<img src="images/recommendations.png" width="900">
+<img src="images/recommendation.png" width="900">
 
 ## Installation
 
